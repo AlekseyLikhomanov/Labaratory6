@@ -1,7 +1,7 @@
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
 //проверка ввода
-double check(double* n);
+double matrix_size_check(double* n);
 
 //создание матрицы
 double** creation(double n, double m);
@@ -42,6 +42,15 @@ void get_matr(double** matr, double** p, double i, double j, double n);
 // Рекурсивное вычисление определителя
 int determinant(double** matr, double n);
 
-//решение системы
-void system_solution(double** A, double** B, double n, double m);
+// Функция перемножения матриц
+void multiply_matrix_matrix(double** matrixA, double** matrixB, double** result, int n);
+
+// Функция изменения значения result 
+void matrix_to_result(double** matr, double** result, int n);
+
+//функция перемножения квадратных матриц
+double** sqr_matrix_multiply_matrix(double** matrixA, double** matrixB, double** result, int n);
+
+//функция подставляет значение одной матрицы в другую
+void copy_matrix(double** original, double** copy, double n);
 #endif
